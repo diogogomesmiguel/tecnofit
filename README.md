@@ -7,9 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Tecnofit
+## Tecnofit - Desafio técnico
 
-Desafio técnico.
+
 
 Partindo do pressuposto, que a maquina tenha o PHP, MySQL, Insomnia instalado, seguiremos para iniciar o projeto.
 
