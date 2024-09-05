@@ -11,13 +11,14 @@
 
 
 
-Partindo do pressuposto, que a maquina tenha o PHP, MySQL, Insomnia instalado, seguiremos para iniciar o projeto.
+Partindo do pressuposto, que a maquina tenha o PHP, MySQL, Composer e Insomnia instalado, seguiremos para iniciar o projeto.
 
 - Primeiro iremos criar um novo banco de dados, com o nome `tecnofit`.
 
 - No arquivo `.env`, tem que configurar o usuário e a senha do seu banco local, para conectar ao banco.
   Deixei demarcado no arquivo .env, onde inicia as configurações do banco.
 
+  - Rodar o comando para instalar as dependencias: `composer install`
   - Rodar o comando para gerar o APP_KEY do Laravel: `php artisan key:generate`
 
 - Após criar o banco e configurar o acesso, iremos rodar alguns comandos para popular o banco:
@@ -38,7 +39,9 @@ Agora precisamos gerar um token para acessarmos a API.
 
 Agora podemos realizar uma consulta:
  - No Insomnia crie uma nova requisição do tipo GET com `URLLOCAL/api/record-movement/IDdoMovement`
-   Os is's são: `1 = Deadlift, 2 = Back Squat e 3 = Bench Press`.
+ - No Auth, selecione ´Bearer Token´, e no campo token, cole o token copiado.
+ - No Header adicione uma nova linha em Add e atribua `Accept` na coluna da esquerda e `application/json` na da direita. Depois é só clicar em Send.
+   *Os is's são: `1 = Deadlift, 2 = Back Squat e 3 = Bench Press`.*
 
 
 
