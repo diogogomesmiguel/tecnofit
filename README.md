@@ -18,6 +18,8 @@ Partindo do pressuposto, que a maquina tenha o PHP, MySQL, Insomnia instalado, s
 - No arquivo `.env`, tem que configurar o usuário e a senha do seu banco local, para conectar ao banco.
   Deixei demarcado no arquivo .env, onde inicia as configurações do banco.
 
+  - Rodar o comando para gerar o APP_KEY do Laravel: `php artisan key:generate`
+
 - Após criar o banco e configurar o acesso, iremos rodar alguns comandos para popular o banco:
   - Rodar os seguintes comandos:
     - `php artisan migrate --seed`
