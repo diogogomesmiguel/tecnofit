@@ -7,60 +7,40 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Tecnofit
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Desafio técnico.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Partindo do pressuposto, que a maquina tenha o PHP, MySQL, Insomnia instalado, seguiremos para iniciar o projeto.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Primeiro iremos criar um novo banco de dados, com o nome `tecnofit`.
 
-## Learning Laravel
+- No arquivo `.env`, tem que configurar o usuário e a senha do seu banco local, para conectar ao banco.
+  Deixei demarcado no arquivo .env, onde inicia as configurações do banco.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Após criar o banco e configurar o acesso, iremos rodar alguns comandos para popular o banco:
+  - Rodar os seguintes comandos:
+    - `php artisan migrate --seed`
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Após isso, podemos testar o projeto.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Temos que rodar o comando `php artisan serve`, clicar com o Ctrl pressionado na url, para abrir
+  no navegador, se abrir a página do laravel é que deu tudo certo.
 
-## Laravel Sponsors
+Agora precisamos gerar um token para acessarmos a API.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- No Insomnia crie uma nova requisição do tipo POST com "URLLOCAL/api/login".
+- No Body selecione Json e cole o código: `{"email": "diogo@gmail.com","password": "123456789"}`
+- No Header adicione uma nova linha em Add e atribua `Accept` na coluna da esquerda e `application/json` na da direita. Depois é só clicar em Send.
+- Copiar o token que irá retornar.
 
-### Premium Partners
+Agora podemos realizar uma consulta:
+ - No Insomnia crie uma nova requisição do tipo GET com `URLLOCAL/api/record-movement/IDdoMovement`
+   Os is's são: `1 = Deadlift, 2 = Back Squat e 3 = Bench Press`.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
+ 
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
